@@ -28,7 +28,7 @@ class CacheMethod(Protocol):
     ) -> CachedFunc[P, R]: ...
 
     @overload
-    def __call__[**P, R](
+    def __call__(
         self,
         ignore: Sequence[str] | None = None,
         verbose: int | None = None,
