@@ -1,6 +1,6 @@
 [project]
 name = "joblib-typed-cache"
-version = "0.0.1"
+version = "0.1.0"
 description = "Typed version of joblib's cache to support pydantic validation and type checking"
 readme = "README.md"
 authors = [

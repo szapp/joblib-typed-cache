@@ -1,8 +1,8 @@
 # Joblib Typed Cache
 
 [![CI](https://github.com/szapp/joblib-typed-cache/actions/workflows/ci.yml/badge.svg)](https://github.com/szapp/joblib-typed-cache/actions/workflows/ci.yml)
-[![PyPI](https://img.shields.io/pypi/v/joblib-typed-cache.svg)](https://pypi.python.org/pypi/joblib-typed-cache)
-[![Python Versions](https://img.shields.io/pypi/pyversions/joblib-typed-cache.svg)](https://github.com/szapp/joblib-typed-cache)
+[![PyPI](https://img.shields.io/pypi/v/joblib-typed-cache)](https://pypi.python.org/pypi/joblib-typed-cache)
+[![Python Versions](https://img.shields.io/pypi/pyversions/joblib-typed-cache)](https://github.com/szapp/joblib-typed-cache)
 [![Support on Ko-fi](https://img.shields.io/badge/ko--fi-support-ff586e?logo=kofi&logoColor=white)](https://ko-fi.com/szapp)
 
 Joblib's cache functionality in `joblib.Memory` does not preserve type annotations of the underlying function.
