@@ -104,4 +104,4 @@ jobs:
         run: uv pip install "pydantic==${{ matrix.pydantic }}"
 
       - name: Test
-        run: uv run pytest --no-cov --inline-snapshot=disable
+        run: uv run --python ${{ matrix.python-version }} pytest --no-cov --inline-snapshot=disable
