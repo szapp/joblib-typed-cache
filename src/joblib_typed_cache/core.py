@@ -108,9 +108,9 @@ class Memory(joblib.Memory):
             return cached_func(*args, **kwargs)
 
         # Keep references accessible
-        setattr(wrapper, "cache", cached_func)
-        setattr(wrapper, "uncached", cached_func.func)
-        setattr(wrapper, "clear", cached_func.clear)
+        wrapper.cache = cached_func  # ty: ignore[unresolved-attribute]
+        wrapper.uncached = cached_func.func  # ty: ignore[unresolved-attribute]
+        wrapper.clear = cached_func.clear  # ty: ignore[unresolved-attribute]
 
         # As a CachedFunc type-checkers should allow `cached_func.clear()`.
         return cast(CachedFunc[P, R], wrapper)

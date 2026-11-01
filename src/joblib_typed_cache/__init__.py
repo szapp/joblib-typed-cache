@@ -1,8 +1,8 @@
 """Typed version of joblib's cache to support pydantic validation and type checking."""
 
 __all__ = [
-    "__version__",
     "Memory",
+    "__version__",
 ]
 
 from .core import Memory

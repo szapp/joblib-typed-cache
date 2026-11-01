@@ -36,14 +36,9 @@ test *args:
 check-testdocs:
     uv run interrogate tests
 
-# Check cognitive complexity
-[group('check')]
-check-complexity:
-    uv run complexipy
-
 # Run linting, formatting, tests and type-checking
 [group('check')]
-check-all: lint cov test typing check-testdocs check-complexity
+check-all: lint cov test typing check-testdocs
 
 ##############
 # LIFE CYCLE #

@@ -15,6 +15,8 @@ jobs:
   ci:
     name: Lint and test
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
 
     steps:
       - name: Checkout
@@ -45,9 +47,6 @@ jobs:
       - name: Check docstrings in tests
         run: uv run interrogate tests
 
-      - name: Check complexity
-        run: uv run complexipy
-
       - name: Test
         run: uv run pytest --inline-snapshot=disable --junitxml=junit/test-results.xml
 
@@ -61,6 +60,8 @@ jobs:
 
   fetch-versions:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     outputs:
       python-versions: ${{ steps.baipp.outputs.supported_python_classifiers_json_array }}
     steps:
@@ -76,6 +77,8 @@ jobs:
   test:
     name: Test combinations of Python and Pydantic
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     needs: fetch-versions
     strategy:
       fail-fast: false

@@ -7,7 +7,6 @@ wheels/
 *.egg-info
 /.nox/
 .coverage
-/.complexipy_cache
 
 # Virtual environments
 .venv

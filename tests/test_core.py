@@ -7,10 +7,10 @@ from inline_snapshot import snapshot
 
 from joblib_typed_cache import Memory
 
-if pydantic.__version__ >= "2.0":  # pragma: no cover
+if int(pydantic.__version__.split(".")[0]) >= 2:  # pragma: no cover
     validate_call = pydantic.validate_call()
 else:  # pragma: no cover
-    validate_call = pydantic.validate_arguments(config={"validate_return": False})
+    validate_call = pydantic.validate_arguments(config={"validate_return": False})  # ty: ignore[call-non-callable]
 
 
 @pytest.fixture(scope="function", name="memory")
@@ -21,7 +21,7 @@ def _memory(tmp_path: Path) -> Memory:
 
 def dummy(a: int = 1, note: str = "") -> bool:
     """Dummy function to cache."""
-    logging.info(note)
+    logging.getLogger("dummy").info(note)
     return True
 
 
@@ -79,7 +79,6 @@ class TestMemory:
         @memory.cache
         def decorated_func() -> None:  # pragma: no cover
             """Docstring of decorated_func."""
-            pass
 
         assert non_decorated_func.__doc__ == snapshot("Dummy function to cache.")
         assert decorated_func.__doc__ == snapshot("Docstring of decorated_func.")

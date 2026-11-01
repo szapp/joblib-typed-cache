@@ -32,17 +32,16 @@
         "uv.lock": true,
         ".venv/**/*": true,
         "**/dist/**/*": true,
-        ".python-version": true,
+        ".python-version": true
     },
     "files.exclude": {
         ".ruff_cache": true,
         ".pytest_cache": true,
         ".coverage*": true,
-        ".complexipy_cache": true,
-        "**/__pycache__": true,
+        "**/__pycache__": true
     },
     "workbench.editorAssociations": {
-        "file:/**/*.md": "vscode.markdown.preview.editor",
+        "file:/**/*.md": "vscode.markdown.preview.editor"
     },
     "[python]": {
         "editor.codeActionsOnSave": {
@@ -53,7 +52,7 @@
         "editor.formatOnSave": true,
         "editor.rulers": [
             88
-        ],
+        ]
     },
     "[toml]": {
         "editor.defaultFormatter": "tamasfe.even-better-toml",
