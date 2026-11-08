@@ -1,10 +1,4 @@
-alias setup := install
-alias sync := install
-alias update := install
-
-# List all commands by default when typing only `just``
-@_default:
-    just --list
+set default-list
 
 #########
 # CHECK #
@@ -48,7 +42,7 @@ check-all: lint cov test typing check-testdocs
 [group('lifecycle')]
 install:
     uv sync
-    uv run prek install --install-hooks --overwrite --no-progress
+    uv run prek install --prepare-hooks --overwrite --no-progress
 
 # Reset environment and all cache files
 [group('lifecycle')]
@@ -65,4 +59,4 @@ fresh: clean install
 [group('lifecycle')]
 upgrade:
     uv sync --upgrade
-    uv run prek auto-update --no-progress
+    uv run prek update --no-progress

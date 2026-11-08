@@ -313,6 +313,7 @@ dev = [
 ]
 tests = [
     { name = "inline-snapshot" },
+    { name = "packaging" },
     { name = "pytest" },
     { name = "pytest-cov" },
     { name = "pytest-randomly" },
@@ -332,6 +333,7 @@ dev = [
 ]
 tests = [
     { name = "inline-snapshot", specifier = ">=0.32.5" },
+    { name = "packaging", specifier = ">=26.3" },
     { name = "pytest", specifier = ">=9.0.2" },
     { name = "pytest-cov", specifier = ">=7.0.0" },
     { name = "pytest-randomly", specifier = ">=4.0.1" },
