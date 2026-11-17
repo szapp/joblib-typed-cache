@@ -23,7 +23,7 @@ cov *args:
 # Run all tests on all dependency combinations (nox)
 [group('check')]
 test *args:
-    uv run nox {{ args }}
+    uv run nox --parallel auto {{ args }}
 
 # Check docstrings on tests
 [group('check')]
