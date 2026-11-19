@@ -54,6 +54,7 @@ default-groups = [
     "dev",
     "tests",
 ]
+exclude-newer = "3 days"
 
 [build-system]
 requires = ["uv_build>=0.13,<0.14"]
